@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 软件主题背景 -->
+    <color name="app_white">#ffffff</color>
+    <color name="app_bg">#efefef</color>
+    <color name="tab_bottom_text_checked">#0b95ff</color>
+    <color name="tab_bottom_text">#808080</color>
+    <color name="fragment_home_divider_color">#eaeaea</color>
+    <color name="app_blue">#0b95ff</color>
+    <color name="app_blue_press">#55b5ff</color>
+    <color name="app_deep_black">#323232</color>
+    <color name="app_middle_black">#808080</color>
+    <color name="app_white_black">#c2c2c2</color>
+    <color name="app_line">#eaeaea</color>
+    <color name="app_red">#ff5a60</color>
+    <color name="app_border">#c2c2c2</color>
+    <color name="app_home_bar_divider">#c3c3c3</color>
+    <color name="app_gray_btn_bg_color">#D0D0D0</color>
+    <color name="app_gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="app_float_transparent">#00000000</color>
+    <color name="app_transparent">#00000000</color>
+    <color name="app_half_transparent">#50000000</color>
+    <color name="app_small_half_transparent">#32000000</color>
+    <color name="app_main_tab_transparent">#B4000000</color>
+    <!-- 图片轮播 -->
+    <color name="circle_gray">#b4efefef</color>
+    <!-- 下拉刷新颜色 -->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_red_light">#ffff4444</color>
+    <!--软件字体颜色配置-->
+    <color name="fc_default">#282828</color>
+    <color name="fc_hint">#9c9c9c</color>
+    <color name="fc1">#2d2d2d</color>
+    <color name="fc2">#585858</color>
+    <color name="fc3">#8d8d8d</color>
+    <color name="fc4">#bebebe</color>
+    <!-- 软件标题颜色 -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- 软件颜色配置 -->
+    <color name="grey_order_bg">#3c3c3c</color>
+    <color name="product_title">#444444</color>
+    <color name="orange_earning">#ec6a46</color>
+    <color name="top_title_bar_bg">#383838</color>
+
+</resources>

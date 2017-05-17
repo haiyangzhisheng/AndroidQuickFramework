@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.aaagame.proframework.widget.AppTitleBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:aa_bar_title="获取图片" />
+
+    <Button
+        android:id="@+id/btn_tz"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/Blue"
+        android:text="图片" />
+
+    <ImageView
+        android:id="@+id/iv_result"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY" />
+</LinearLayout>

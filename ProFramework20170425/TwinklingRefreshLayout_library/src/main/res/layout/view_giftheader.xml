@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:clipChildren="true">
+    <!--<com.lcodecore.tkrefreshlayout.ScaleView-->
+        <!--android:id="@+id/iv_arrow"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:src="@drawable/gift_loading"/>-->
+
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:visibility="visible"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/gift_loading"
+        />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="下拉即可刷新···"
+        android:textColor="@color/black_ll"
+        />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.aaagame.proframework.widget.AppTitleBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:aa_bar_title="测试" />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ScrollView>
+</LinearLayout>

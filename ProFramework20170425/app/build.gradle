@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.aaagame.proframework"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':banner')
+    compile project(':SmartTabLayout_library')
+    compile project(':SmartTabLayout_utils-v4')
+    compile project(':TwinklingRefreshLayout_library')
+    compile files('libs/SocialSDK_QQ_Simplify.jar')
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('libs/umeng_social_shareview.jar')
+    compile files('libs/SocialSDK_Sina_Simplify.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile files('libs/umeng_social_shareboard.jar')
+    compile files('libs/jcore-android_v1.0.0.jar')
+    compile files('libs/jpush-android_v3.0.0.jar')
+    compile files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
+    compile files('libs/alipaySdk-20161129.jar')
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'org.xutils:xutils:3.5.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.android.support:support-v4:25.3.0'
+    compile 'com.android.support:design:25.3.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:palette-v7:25.3.0'
+    compile 'com.yalantis:ucrop:2.2.0-native'
+}

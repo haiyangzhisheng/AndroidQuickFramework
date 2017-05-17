@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dip"
+    android:layout_height="fill_parent"
+    android:background="@color/app_white">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/lin_content"
+            android:layout_marginTop="10dip"
+            android:background="@color/grey500"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/tv16"
+                android:text="选择蓝牙设备"
+                android:textColor="@color/app_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv13"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="提示：常用蓝牙设备名字为：BM9000-II，默认密码为：0000（如无法寻找到打印机请重启打印机并重新连接）"
+                android:textColor="@color/fc_hint" />
+
+            <TextView
+                style="@style/tv14"
+                android:layout_width="fill_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="未配对设备"
+                android:textColor="@color/grey700" />
+
+            <LinearLayout
+                android:id="@+id/line_wpd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+
+            <TextView
+                style="@style/tv14"
+                android:layout_width="fill_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="已经配对设备"
+                android:textColor="@color/grey700" />
+
+            <LinearLayout
+                android:id="@+id/line_ypd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="5dip"
+            android:src="@color/fc_hint" />
+
+        <LinearLayout
+            style="@style/lin_content"
+            android:layout_width="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_cpxz_cancle"
+                style="@style/btn16"
+                android:text="取 消" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

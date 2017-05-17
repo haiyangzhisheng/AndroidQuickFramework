@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_ll">
+
+    <com.aaagame.proframework.imagebrowser.ImageViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:background="@color/black_ll" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/app_title_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/top_title_bar_back" />
+
+        <TextView
+            android:id="@+id/app_delete"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/app_white"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

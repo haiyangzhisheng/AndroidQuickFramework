@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ProFramework20170425.iml" filepath="$PROJECT_DIR$/ProFramework20170425.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartTabLayout_library/SmartTabLayout_library.iml" filepath="$PROJECT_DIR$/SmartTabLayout_library/SmartTabLayout_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartTabLayout_utils-v4/SmartTabLayout_utils-v4.iml" filepath="$PROJECT_DIR$/SmartTabLayout_utils-v4/SmartTabLayout_utils-v4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TwinklingRefreshLayout_library/TwinklingRefreshLayout_library.iml" filepath="$PROJECT_DIR$/TwinklingRefreshLayout_library/TwinklingRefreshLayout_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
+    </modules>
+  </component>
+</project>

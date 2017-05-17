@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="aa_AppTitleBar">
+        <attr name="aa_bar_title" format="string" />
+        <attr name="aa_back_img" format="reference" />
+        <attr name="aa_back_text" format="string" />
+        <attr name="aa_action_img" format="reference" />
+        <attr name="aa_action_text" format="string" />
+        <attr name="aa_bar_background" format="reference|color" />
+        <attr name="aa_bar_title_text_color" format="reference|color" />
+    </declare-styleable>
+</resources>

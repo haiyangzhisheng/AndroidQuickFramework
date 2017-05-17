@@ -1,0 +1,7 @@
+快速搭建安卓项目框架使用说明：
+1、AndroidManifest.xml中列出了所有功能模块的使用Activity,使用时直接复制里面的代码即可
+2、创建Activity时直接复制T_Model_Activity.java和其视图t_activity_model.xml或者参照示例Activity继承BaseFragmentActivity
+3、BaseApplication.java继承了Application，在软件打开后进行框架初始化等操作
+4、MainActivity.java中列出了一般软件打开时需要进行的操作
+5、各包名意义：utils,工具包；widget，自定义视图控件；bean,实体类；adapter,适配器；dialog,弹框；
+6、res下目录：drawable-xxhdpi存放软件用到的图片，mipmap目录存放软件图标。anim存放动画处理xml
