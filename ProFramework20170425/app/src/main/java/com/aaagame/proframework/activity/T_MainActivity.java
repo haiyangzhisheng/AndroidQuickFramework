@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.aaagame.proframework.R;
 import com.aaagame.proframework.utils.AAComAdapter;
+import com.aaagame.proframework.utils.AAPath;
 import com.aaagame.proframework.utils.AAViewHolder;
 
 import org.xutils.view.annotation.ContentView;
@@ -28,6 +29,7 @@ public class T_MainActivity extends BaseFragmentActivity {
         initListener();
         initData();
         reqData();
+        System.out.println("根路径：：：：" + AAPath.getRootPath());
     }
 
     //=============================初始化view
@@ -62,7 +64,10 @@ public class T_MainActivity extends BaseFragmentActivity {
         map.put("T_PaletteActivity", "提取和设置主题颜色");
         map.put("T_SmartTabActivity", "选项卡");
         map.put("T_CameraActivity", "拍照和选择照片");
-        map.put("T_Xutils_Activity","Xutils的使用");
+        map.put("T_Xutils_Activity", "Xutils的使用");
+        map.put("T_Pay_Activity", "支付");
+        map.put("T_ListEmpty_Activity", "列表为空显示为空界面");
+        map.put("T_AppManager_Activity", "Activity管理");
         AAComAdapter<String> adapter = new AAComAdapter<String>(myActivity, R.layout.t_activity_main_item, new ArrayList<>(map.values())) {
             @Override
             public void convert(AAViewHolder holder, String mt) {

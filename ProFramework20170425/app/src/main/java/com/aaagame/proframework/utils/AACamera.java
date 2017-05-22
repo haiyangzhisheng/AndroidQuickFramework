@@ -39,10 +39,10 @@ public class AACamera {
         boolean hasSDCard = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
         if (hasSDCard) {
             filePath = Environment.getExternalStorageDirectory().toString() + File.separator
-                    + "message_2020_xzqhmodel.txt";
+                    + "test.txt";
         } else
             filePath = Environment.getDownloadCacheDirectory().toString() + File.separator
-                    + "message_2020_xzqhmodel.txt";
+                    + "test.txt";
 
         try {
             File file = new File(filePath);

@@ -225,6 +225,24 @@ public class AACom {
     }
 
     /**
+     * 加载图片Gif FIT_XY
+     *
+     * @param imageView
+     * @param path
+     */
+    public static void displayGifFitImage(ImageView imageView, String path) {
+        ImageOptions imageOptions = new ImageOptions.Builder()
+                // 加载中或错误图片的ScaleType
+                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                .setLoadingDrawableId(R.drawable.default_image)
+                .setFailureDrawableId(R.drawable.default_image)
+                .setIgnoreGif(false)
+                .build();
+        x.image().bind(imageView, path, imageOptions);
+    }
+
+    /**
      * 打开图片查看器
      *
      * @param position

@@ -40,7 +40,7 @@ public class BaseFragmentActivity extends FragmentActivity implements View.OnCli
     public Activity myActivity;
     protected AppTitleBar mTitleBar;
     /**
-     * 请求时显示提示
+     * 本次请求时显示提示,false时不显示请求提示
      */
     public boolean reqShowAlert = true;
 
@@ -175,7 +175,7 @@ public class BaseFragmentActivity extends FragmentActivity implements View.OnCli
 
     public void animFinish() {
         this.finish(); // finish当前activity
-        myActivity.overridePendingTransition(R.anim.fragment_enter, R.anim.fragment_exit);
+        myActivity.overridePendingTransition(R.anim.fragment_back_enter, R.anim.fragment_back_exit);
     }
 
     // ================================公共方法
@@ -249,7 +249,7 @@ public class BaseFragmentActivity extends FragmentActivity implements View.OnCli
     }
 
     /**
-     * 检查是否有EditText为空
+     * 设置EditText为不可用
      *
      * @param ids
      * @return

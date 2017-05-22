@@ -41,7 +41,6 @@
             android:layout_centerInParent="true"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
             android:src="@drawable/default_image" />
     </RelativeLayout>
 

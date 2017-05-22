@@ -13,10 +13,14 @@
         android:clickable="true"
         app:aa_bar_title="标题" />
 
-    <Button
-        android:id="@+id/btn_tz"
+    <ListView
+        android:id="@+id/lv_list"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/Blue"
-        android:text="跳转" />
+        android:layout_height="wrap_content" />
+
+    <GridView
+        android:id="@+id/gv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

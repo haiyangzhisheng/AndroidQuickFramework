@@ -27,4 +27,17 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY" />
+
+    <TextView
+        style="@style/tv14"
+        android:text="获取多张图片" />
+
+    <LinearLayout
+        android:id="@+id/photo_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_white"
+        android:orientation="horizontal"></LinearLayout>
 </LinearLayout>

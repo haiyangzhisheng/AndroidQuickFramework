@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,6 +23,8 @@ import android.widget.Toast;
 import com.aaagame.proframework.R;
 import com.aaagame.proframework.imagebrowser.Photo_Dialog_Fragment;
 import com.lcodecore.tkrefreshlayout.utils.DensityUtil;
+import com.yalantis.ucrop.UCrop;
+import com.yalantis.ucrop.UCropActivity;
 
 import org.xutils.common.Callback;
 import org.xutils.image.ImageOptions;
@@ -37,6 +40,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import static android.R.attr.maxHeight;
+import static android.R.attr.maxWidth;
 import static com.aaagame.proframework.utils.AACamera.photoWidth;
 
 
@@ -343,7 +348,6 @@ public class Photo_Take_Util {
     }
 
     public static final int selectPhoto = 52;
-    public static final int cropPhoto = 53;
     public static final int photomark = 51;
     public int photo_delete_mark = 54;
     Photo_Dialog_Fragment photo_dialog_fragment;
@@ -355,7 +359,9 @@ public class Photo_Take_Util {
                 // takePhoto(getImgname(v));
                 String curimgpath = AAPath.getPathPhoto(getImgname(v));
                 photo_dialog_fragment = new Photo_Dialog_Fragment();
-                photo_dialog_fragment.setAdapter(ada);
+                if (ada != null) {
+                    photo_dialog_fragment.setAdapter(ada);
+                }
                 photo_dialog_fragment.setUpdatePath(curimgpath);
                 photo_dialog_fragment.setPhoto_Take_Util(Photo_Take_Util.this);
                 photo_dialog_fragment.show(myActivity.getFragmentManager(), "Photo_Dialog_Fragment");
@@ -420,18 +426,20 @@ public class Photo_Take_Util {
     public void setResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == photomark) {
-                startPhotoZoom(myActivity, photo_dialog_fragment.getCameraPath(), photo_dialog_fragment.getUpdatePath());
+                startUCrop(myActivity, photo_dialog_fragment.getCameraPath(), photo_dialog_fragment.getUpdatePath());
             } else if (requestCode == photo_delete_mark) {
                 updateImgs(data.getStringExtra("path"));
-                ada.notifyDataSetChanged();
+                if (ada != null) {
+                    ada.notifyDataSetChanged();
+                }
             } else if (requestCode == selectPhoto) {
                 String imgPath = AAImageUtil.getImageAbsolutePath(myActivity, data.getData());
                 if (imgPath == null || !new File(imgPath).exists()) {
                     Toast.makeText(myActivity, "图片在本地不存在", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                startPhotoZoom(myActivity, imgPath, photo_dialog_fragment.getUpdatePath());
-            } else if (requestCode == cropPhoto) {
+                startUCrop(myActivity, imgPath, photo_dialog_fragment.getUpdatePath());
+            } else if (requestCode == UCrop.REQUEST_CROP) {
                 try {
                     setImgview(photo_dialog_fragment.getUpdatePath());
                 } catch (Exception e) {
@@ -464,7 +472,26 @@ public class Photo_Take_Util {
         // intent.putExtra("outputFormat",
         // Bitmap.CompressFormat.JPEG.toString());
 
-        activity.startActivityForResult(intent, cropPhoto);
+//        activity.startActivityForResult(intent, cropPhoto);
+    }
+
+    // 进行剪切
+    public static void startUCrop(Activity myActivity, String sourcePath, String uploadPath) {
+        UCrop.Options options = new UCrop.Options();
+        //开始设置
+        //一共三个参数，分别对应裁剪功能页面的“缩放”，“旋转”，“裁剪”界面，对应的传入NONE，就表示关闭了其手势操作，比如这里我关闭了缩放和旋转界面的手势，只留了裁剪页面的手势操作
+        options.setAllowedGestures(UCropActivity.SCALE, UCropActivity.ROTATE, UCropActivity.ALL);
+        options.setHideBottomControls(true);
+        options.setShowCropGrid(false);
+        options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
+        options.withMaxResultSize(500, 500);
+        options.setCompressionQuality(70);
+        options.setToolbarColor(ContextCompat.getColor(myActivity, R.color.blue500));
+        options.setStatusBarColor(ContextCompat.getColor(myActivity, R.color.blue500));
+        UCrop.of(Uri.fromFile(new File(sourcePath)), Uri.fromFile(new File(uploadPath)))
+                .withAspectRatio(1, 1)
+                .withMaxResultSize(maxWidth, maxHeight).withOptions(options)
+                .start(myActivity);
     }
 
     /**

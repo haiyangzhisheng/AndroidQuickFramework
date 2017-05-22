@@ -1,5 +1,6 @@
 package com.aaagame.proframework.imagebrowser;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -94,7 +95,7 @@ public class ImageDetailFragment extends Fragment {
 
             @Override
             public void onSuccess(File result) {
-                x.image().bind(mImageView, mImageUrl);
+                mImageView.setImageURI(Uri.fromFile(result));
                 mAttacher.update();
             }
 
@@ -109,7 +110,6 @@ public class ImageDetailFragment extends Fragment {
 
             @Override
             public void onFinished() {
-
                 progressBar.setVisibility(View.GONE);
             }
         });

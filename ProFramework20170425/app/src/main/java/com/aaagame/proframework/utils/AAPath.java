@@ -2,23 +2,40 @@ package com.aaagame.proframework.utils;
 
 import android.os.Environment;
 
+import org.xutils.x;
+
 import java.io.File;
 
+import static org.xutils.common.util.FileUtil.existsSdcard;
+
+/**
+ * 将文件保存到
+ */
 public class AAPath {
-    public static final String RootPathName = "HengZhiYuan";
 
     /**
-     * 根目录
+     * 根目录,软件卸载后会自动删除
      *
      * @return
      */
     public static String getRootPath() {
-        String path = Environment.getExternalStorageDirectory().getPath() + File.separator + RootPathName;
-        File file = new File(path);
-        if (!file.exists()) {
-            file.mkdirs();
+        File result;
+        if (existsSdcard()) {
+            File cacheDir = x.app().getExternalCacheDir();
+            if (cacheDir == null) {
+                result = new File(Environment.getExternalStorageDirectory(),
+                        "Android/data/" + x.app().getPackageName() + "/app_cache");
+            } else {
+                result = new File(cacheDir, "app_cache");
+            }
+        } else {
+            result = new File(x.app().getCacheDir(), "app_cache");
         }
-        return path;
+        if (result.exists() || result.mkdirs()) {
+            return result.getPath();
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -52,6 +69,7 @@ public class AAPath {
     public static String getPathTxPhoto() {
         return getPhotoPath() + File.separator + "update_tx.jpg";
     }
+
     /**
      * 照片本地上传头像路径
      *

@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            style="@style/tv14"
+            android:layout_centerInParent="true"
+            android:text="付款详情" />
+
+        <ImageView
+            android:id="@+id/cancel_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:padding="13dp"
+            android:src="@drawable/cancel" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/line_dots" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            style="@style/tv14"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="支付宝支付" />
+
+        <ImageView
+            android:id="@+id/alipay_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="7dp"
+            android:src="@drawable/dialog_pay_selector" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            style="@style/tv14"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="微信支付" />
+
+        <ImageView
+            android:id="@+id/weixin_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:padding="7dp"
+            android:src="@drawable/dialog_pay_selector" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginBottom="18dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            style="@style/tv14"
+            android:layout_centerVertical="true"
+            android:text="银行卡支付" />
+
+        <ImageView
+            android:id="@+id/union_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:padding="7dp"
+            android:src="@drawable/dialog_pay_selector" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/line_dots" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <TextView
+            style="@style/tv12"
+            android:text="需付款：" />
+
+        <TextView
+            android:id="@+id/sum_price_tv"
+            style="@style/tv14"
+            android:text="0.00" />
+
+        <TextView
+            style="@style/tv14"
+            android:text="元" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pay_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/shape_rect_radius_pay_btn"
+        android:gravity="center"
+        android:text="立即支付"
+        android:textColor="@color/yellow500" />
+</LinearLayout>

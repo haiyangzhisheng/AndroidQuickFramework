@@ -31,11 +31,17 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
      * 对每一行设置不同颜色时存储颜色列表
      */
     private SparseArray<String> arraycolor;
+    /**
+     * 是否在获取view时每次都从新findViewById
+     */
     private boolean showFresh = false;
     /**
      * 是否显示无数据界面
      */
     private boolean showNoData = true;
+    /**
+     * 分页时请求的页数
+     */
     public int nextpage = 1;
 
     public void setNotShowNoData() {

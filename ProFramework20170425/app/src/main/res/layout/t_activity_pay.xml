@@ -14,9 +14,8 @@
         app:aa_bar_title="标题" />
 
     <Button
-        android:id="@+id/btn_tz"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/Blue"
-        android:text="跳转" />
+        android:id="@+id/btn_create_order"
+        style="@style/btn16"
+        android:text="生成订单" />
+
 </LinearLayout>

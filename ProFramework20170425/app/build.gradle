@@ -40,6 +40,8 @@ dependencies {
     compile files('libs/jpush-android_v3.0.0.jar')
     compile files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
     compile files('libs/alipaySdk-20161129.jar')
+    compile files('libs/UPPayAssistEx.jar')
+    compile files('libs/UPPayPluginExPro.jar')
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'org.xutils:xutils:3.5.0'
     compile 'com.google.code.gson:gson:2.8.0'
