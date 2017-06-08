@@ -19,7 +19,6 @@ import com.aaagame.proframework.utils.AAPath;
 import com.aaagame.proframework.utils.Ahttp;
 import com.aaagame.proframework.utils.ArequestCallBack;
 import com.aaagame.proframework.utils.ConInterface;
-import com.aaagame.proframework.utils.Contants;
 import com.aaagame.proframework.utils.SpUtils;
 
 import org.json.JSONArray;
@@ -80,7 +79,7 @@ public class AppUpdateService extends Service {
             return;
         }
         System.out.println("礼包检测================");
-        Ahttp ahttp = new Ahttp(ConInterface.VoucherShow, "", "");
+        Ahttp ahttp = new Ahttp("", "", "");
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override
             public void onSuccess(String responseInfo) {
@@ -106,7 +105,7 @@ public class AppUpdateService extends Service {
     }
 
     private void checkVersion(final Intent intent) {
-        Ahttp ahttp = new Ahttp(ConInterface.GetVersion, "");
+        Ahttp ahttp = new Ahttp(ConInterface.Sample, "");
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override
             public void onSuccess(String responseInfo) {
@@ -152,11 +151,11 @@ public class AppUpdateService extends Service {
      */
     private void updateApp(String updateUrl) {
 
-        RequestParams params = new RequestParams(Contants.IMAGE_HOST + updateUrl);
+        RequestParams params = new RequestParams(ConInterface.IMAGE_HOST + updateUrl);
         params.setConnectTimeout(connTimeout);
         params.setAutoResume(true);
         params.setAutoRename(true);
-        params.setSaveFilePath(AAPath.getApkPath() + File.separator + AADate.getDateStrName() + ".apk");
+        params.setSaveFilePath(AAPath.getApkPath() + File.separator + AADate.getCurrentTime(AADate.ymdhms_name) + ".apk");
         params.setExecutor(new PriorityExecutor(2, true));
         params.setCancelFast(true);
         x.http().get(params, new ProgressCallback<File>() {

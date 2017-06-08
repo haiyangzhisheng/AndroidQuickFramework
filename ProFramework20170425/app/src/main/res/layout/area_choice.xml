@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_white"
+    android:orientation="vertical">
+
+    <View style="@style/divider_h" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey50">
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            style="@style/tv16"
+            android:clickable="true"
+            android:padding="10dp"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            style="@style/tv16"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:padding="10dp"
+            android:text="确定"
+            android:textColor="@color/app_blue" />
+    </RelativeLayout>
+
+    <View style="@style/divider_h" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_white"
+        android:orientation="horizontal">
+
+        <com.aaagame.proframework.areachoice.wheel.WheelView
+            android:id="@+id/id_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.aaagame.proframework.areachoice.wheel.WheelView
+            android:id="@+id/id_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.aaagame.proframework.areachoice.wheel.WheelView
+            android:id="@+id/id_district"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

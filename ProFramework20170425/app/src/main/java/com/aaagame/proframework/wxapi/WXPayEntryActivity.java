@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.aaagame.proframework.utils.AAToast;
-import com.aaagame.proframework.utils.Contants;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
@@ -50,8 +49,8 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 //			builder.show();
             //发送通知
             Intent intent = new Intent();
-            intent.setAction(Contants.PAY_RESULT_WEIXIN);
-            intent.putExtra(Contants.PAY_RESULT_WEIXIN, resp.errCode);
+            intent.setAction("pay_result_weixin");
+            intent.putExtra("pay_result_weixin", resp.errCode);
             sendBroadcast(intent);
             if (resp.errCode == -2) {//用户取消
                 AAToast.toastShow(this, "取消支付");

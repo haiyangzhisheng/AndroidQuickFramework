@@ -46,5 +46,6 @@
     <color name="product_title">#444444</color>
     <color name="orange_earning">#ec6a46</color>
     <color name="top_title_bar_bg">#383838</color>
-
+    <color name="tt">#efff4081</color>
+    <color name="ttf">#3fff4081</color>
 </resources>

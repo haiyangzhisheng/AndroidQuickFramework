@@ -514,7 +514,7 @@ public class Photo_Take_Util {
      * 获取当前点击事件的照片的名字
      */
     private String getImgname(View v) {
-        return AADate.getDateStrName() + new Random().nextInt(1000) + ".jpg";
+        return AADate.getCurrentTime(AADate.ymdhms_name) + new Random().nextInt(1000) + ".jpg";
     }
     /*
      * 获取当前点击事件的照片的名字

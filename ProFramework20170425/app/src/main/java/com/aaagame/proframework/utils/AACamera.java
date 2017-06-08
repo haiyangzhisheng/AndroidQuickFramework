@@ -327,7 +327,13 @@ public class AACamera {
         }
     }
 
-    public static Bitmap watermarkBitmapTT(Bitmap src, String title) {
+    /**
+     * 图片添加水印
+     * @param src
+     * @param title
+     * @return
+     */
+    public static Bitmap watermarkBitmap(Bitmap src, String title) {
         if (src == null) {
             return null;
         }

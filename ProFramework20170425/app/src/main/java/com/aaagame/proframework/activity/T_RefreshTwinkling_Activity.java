@@ -87,7 +87,7 @@ public class T_RefreshTwinkling_Activity extends BaseFragmentActivity {
             e.printStackTrace();
         }
 //        Ahttp ahttp = new Ahttp(myActivity, ConInterface.UserDesignerRecordList, jsonObject.toString(), SpUtils.getUserToken(myActivity));
-        Ahttp ahttp = new Ahttp(myActivity, ConInterface.UserDesignerRecordList, jsonObject.toString(), "");
+        Ahttp ahttp = new Ahttp(myActivity, ConInterface.Sample, jsonObject.toString(), "");
         ahttp.send(new ArequestCallBack<String>(myActivity, ahttp) {
             @Override
             public void onSuccess(String res) {

@@ -7,7 +7,7 @@ import android.os.IBinder;
 
 import com.aaagame.proframework.utils.Ahttp;
 import com.aaagame.proframework.utils.ArequestCallBack;
-import com.aaagame.proframework.utils.Contants;
+import com.aaagame.proframework.utils.ConInterface;
 import com.aaagame.proframework.utils.SpKey;
 import com.aaagame.proframework.utils.SpUtils;
 
@@ -52,10 +52,10 @@ public class AppCatchService extends Service {
     public void getHttpData() {
         Ahttp ahttp = null;
         JSONObject ob = new JSONObject();
-        if (SpUtils.getBool(this, Contants.IS_LOGIN)) {
-            ahttp = new Ahttp(Contants.HOME_SHOPPING_MALL, ob.toString(), SpUtils.getStr(this, Contants.USER_TOKEN));
+        if (SpUtils.getBool(this, ConInterface.Sample)) {
+            ahttp = new Ahttp(ConInterface.Sample, ob.toString(), "");
         } else {
-            ahttp = new Ahttp(Contants.HOME_SHOPPING_MALL, ob.toString(), "");
+            ahttp = new Ahttp(ConInterface.Sample, ob.toString(), "");
         }
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override

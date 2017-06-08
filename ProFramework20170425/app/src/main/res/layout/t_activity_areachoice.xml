@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.aaagame.proframework.widget.AppTitleBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:aa_bar_title="标题" />
+
+    <Button
+        android:id="@+id/btn_show"
+        style="@style/btn16"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:text="地址选择" />
+
+</LinearLayout>

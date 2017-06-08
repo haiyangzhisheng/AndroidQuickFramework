@@ -71,6 +71,16 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+
+    <style name="tv15_singleline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/fc_default</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
     <style name="tv16">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

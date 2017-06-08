@@ -31,8 +31,7 @@ import com.aaagame.proframework.utils.AAToast;
 import com.aaagame.proframework.utils.AAViewCom;
 import com.aaagame.proframework.utils.Ahttp;
 import com.aaagame.proframework.utils.ArequestCallBack;
-import com.aaagame.proframework.utils.Contants;
-import com.aaagame.proframework.utils.SpUtils;
+import com.aaagame.proframework.utils.ConInterface;
 import com.alipay.sdk.app.PayTask;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
@@ -100,8 +99,8 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
         window.setAttributes(lp);
 
         initView(dialog.getWindow().getDecorView());
-        api = WXAPIFactory.createWXAPI(getActivity(), Contants.APP_ID);
-        registerBroadcast(Contants.PAY_RESULT_WEIXIN);
+        api = WXAPIFactory.createWXAPI(getActivity(), "");
+        registerBroadcast("pay_result_weixin");
         return dialog;
     }
 
@@ -201,7 +200,7 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        final Ahttp ahttp = new Ahttp(getActivity(), Contants.PAY, ob.toString(), SpUtils.getStr(getActivity(), Contants.USER_TOKEN));
+        final Ahttp ahttp = new Ahttp(getActivity(), ConInterface.Sample, ob.toString(), "");
         ahttp.send(new ArequestCallBack<String>(getActivity(), ahttp) {
             @Override
             public void onSuccess(String responseInfo) {
@@ -302,8 +301,8 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
             json = new JSONObject(data);
             if (null != json) {
                 PayReq req = new PayReq();
-                req.appId = Contants.APP_ID;
-                req.partnerId = Contants.PARTNER_ID;
+                req.appId = "";
+                req.partnerId = "";
                 req.prepayId = json.getString("prepayid");
                 req.nonceStr = json.getString("noncestr");
                 req.timeStamp = json.getString("timestamp");
@@ -413,12 +412,12 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(Contants.PAY_RESULT_WEIXIN)) {//微信支付结果
-                if (intent.getIntExtra(Contants.PAY_RESULT_WEIXIN, 0) == -2) {//取消订单
+            if (action.equals("pay_result_weixin")) {//微信支付结果
+                if (intent.getIntExtra("pay_result_weixin", 0) == -2) {//取消订单
 
-                } else if (intent.getIntExtra(Contants.PAY_RESULT_WEIXIN, 0) == -1) {//支付失败
+                } else if (intent.getIntExtra("pay_result_weixin", 0) == -1) {//支付失败
                     toPayResultActivity(1);
-                } else if (intent.getIntExtra(Contants.PAY_RESULT_WEIXIN, 0) == 0) {//支付成功
+                } else if (intent.getIntExtra("pay_result_weixin", 0) == 0) {//支付成功
                     toPayResultActivity(0);
                 }
 
@@ -435,11 +434,11 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
         try {
             Intent intent = new Intent();
 //            intent.setClass(activity, PayResultActivity.class);
-            intent.putExtra(Contants.From, from);
-            intent.putExtra(Contants.PAY_TYPE, mpayType);
+            intent.putExtra("from", from);
+            intent.putExtra("paytype", mpayType);
             intent.putExtra("orderType", orderType);
 //        intent.putExtra(Contants.PAY_PRICE,price);
-            intent.putExtra(Contants.ORDERSN, orderSn);
+            intent.putExtra("ordersn", orderSn);
             startActivity(intent);
             getActivity().overridePendingTransition(R.anim.fragment_enter, R.anim.fragment_exit);
             getActivity().finish();

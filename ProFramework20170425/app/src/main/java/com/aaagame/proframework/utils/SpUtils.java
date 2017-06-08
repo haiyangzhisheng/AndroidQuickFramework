@@ -81,7 +81,7 @@ public class SpUtils {
      * @return
      */
     public static boolean isLogin(Context myActivity) {
-        if (TextUtils.isEmpty(SpUtils.getStr(myActivity, Contants.USER_INFO))) {
+        if (TextUtils.isEmpty(SpUtils.getStr(myActivity, ""))) {
             return false;
         }
         return true;

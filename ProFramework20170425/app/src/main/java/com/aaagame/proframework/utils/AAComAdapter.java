@@ -1,7 +1,6 @@
 package com.aaagame.proframework.utils;
 
 import android.content.Context;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +27,6 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
     private int noDataLayoutId = -1;
     public Photo_Take_Util currentUtil;
     /**
-     * 对每一行设置不同颜色时存储颜色列表
-     */
-    private SparseArray<String> arraycolor;
-    /**
      * 是否在获取view时每次都从新findViewById
      */
     private boolean showFresh = false;
@@ -44,6 +39,9 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
      */
     public int nextpage = 1;
 
+    /**
+     * 设置不显示空界面
+     */
     public void setNotShowNoData() {
         showNoData = false;
     }
@@ -206,16 +204,6 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
         }
     }
 
-    public void addTextColor(int position, String color) {
-        if (arraycolor == null) {
-            arraycolor = new SparseArray<String>();
-        }
-        arraycolor.put(position, color);
-    }
-
-    public String getTextColor(int position) {
-        return arraycolor.get(position);
-    }
 
     public abstract void convert(AAViewHolder holder, T mt);
 

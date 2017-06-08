@@ -130,7 +130,7 @@ public class Photo_Dialog_Fragment extends DialogFragment {
                 if (adapter != null && photo_take_util != null) {
                     adapter.currentUtil = photo_take_util;
                 }
-                cameraPath = AAPath.getCacheFilesPath() + File.separator + AADate.getDateStrName() + new Random().nextInt() + ".jpg";
+                cameraPath = AAPath.getCacheFilesPath() + File.separator + AADate.getCurrentTime(AADate.ymdhms_name) + new Random().nextInt() + ".jpg";
                 takePhoto(getActivity());
                 Photo_Dialog_Fragment.this.dismiss();
             }
