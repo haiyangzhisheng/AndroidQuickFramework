@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -16,11 +15,11 @@ import com.aaagame.proframework.imagebrowser.Photo_Dialog_Fragment;
 import com.aaagame.proframework.utils.AAImageUtil;
 import com.aaagame.proframework.utils.AAMethod;
 import com.aaagame.proframework.utils.AAPath;
-import com.aaagame.proframework.utils.AAViewCom;
 import com.aaagame.proframework.utils.Photo_Take_Util;
 import com.yalantis.ucrop.UCrop;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import java.io.File;
@@ -39,23 +38,33 @@ public class T_CameraActivity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        btn_tz = AAViewCom.getBtn(myActivity, R.id.btn_tz);
-        btn_tz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        sL_Photo_Take_Util = new Photo_Take_Util(null, myActivity, photo_value, 5);
+        sL_Photo_Take_Util.setShowDelete();
+
+    }
+
+    //是否点击Photo_Take_Util请求多张图片
+    boolean reqPhotos = true;
+
+    @Event(value = {R.id.btn_tz})
+    private void setClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_tz:
+                reqPhotos = false;
                 photo_dialog_fragment = new Photo_Dialog_Fragment();
                 photo_dialog_fragment.setUpdatePath(AAPath.getPathPhoto1());
                 photo_dialog_fragment.show(myActivity.getFragmentManager(), "Photo_Dialog_Fragment");
-            }
-        });
-
-        sL_Photo_Take_Util = new Photo_Take_Util(null, myActivity, photo_value, 5);
-        sL_Photo_Take_Util.setShowDelete();
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        photo_dialog_fragment.setPermissionsResult(myActivity, requestCode, grantResults);
+        if (photo_dialog_fragment != null) {
+            photo_dialog_fragment.setPermissionsResult(myActivity, requestCode, grantResults);
+        }
     }
 
     Uri resultUri;
@@ -63,7 +72,7 @@ public class T_CameraActivity extends BaseFragmentActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
-            if (photo_dialog_fragment == null) {
+            if (reqPhotos) {
                 sL_Photo_Take_Util.setResult(requestCode, resultCode, data);
             } else {
                 if (requestCode == photomark) {
@@ -81,8 +90,10 @@ public class T_CameraActivity extends BaseFragmentActivity {
                 }
 
                 if (requestCode == UCrop.REQUEST_CROP) {
+                    reqPhotos = true;
                     resultUri = UCrop.getOutput(data);
                     if (resultUri != null) {
+                        iv_result.setImageResource(0);
                         iv_result.setImageURI(resultUri);
                     } else {
                     }
@@ -94,8 +105,6 @@ public class T_CameraActivity extends BaseFragmentActivity {
 
     @ViewInject(R.id.iv_result)
     ImageView iv_result;
-
-    Button btn_tz;
 
 
 }

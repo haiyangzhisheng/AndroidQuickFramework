@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/Blue"
-        android:text="图片" />
+        android:text="单张图片" />
 
     <ImageView
         android:id="@+id/iv_result"
@@ -34,7 +34,7 @@
 
     <LinearLayout
         android:id="@+id/photo_value"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp"
