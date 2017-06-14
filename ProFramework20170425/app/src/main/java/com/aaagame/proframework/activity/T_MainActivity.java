@@ -68,7 +68,9 @@ public class T_MainActivity extends BaseFragmentActivity {
         map.put("T_Pay_Activity", "支付");
         map.put("T_ListEmpty_Activity", "列表为空显示为空界面");
         map.put("T_AppManager_Activity", "Activity管理");
-        map.put("T_AreaChoice_Activity","地址选择器");
+        map.put("T_AreaChoice_Activity", "地址选择器");
+        map.put("T_Widget_BottomCircle_Activity", "自定义绘制控件--向下弧度的扇形");
+
         AAComAdapter<String> adapter = new AAComAdapter<String>(myActivity, R.layout.t_activity_main_item, new ArrayList<>(map.values())) {
             @Override
             public void convert(AAViewHolder holder, String mt) {

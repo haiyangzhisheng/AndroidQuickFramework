@@ -4,6 +4,7 @@ import android.app.Application;
 import android.app.Notification;
 
 import com.aaagame.proframework.utils.AAMethod;
+import com.squareup.leakcanary.LeakCanary;
 
 import org.xutils.x;
 
@@ -21,6 +22,12 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
         MyVersionName = AAMethod.getVersionName(this);
         //xutils初始化
         x.Ext.init(this);

@@ -56,7 +56,8 @@
         <activity android:name=".activity.T_AppManager_Activity" />
         <!--地址选择器-->
         <activity android:name=".activity.T_AreaChoice_Activity" />
-
+        <!--绘制自定义视图之向下弧度的扇形-->
+        <activity android:name=".activity.T_Widget_BottomCircle_Activity" />
 
         <!--支付-->
         <activity android:name=".activity.T_Pay_Activity" />

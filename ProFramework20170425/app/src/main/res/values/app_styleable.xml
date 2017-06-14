@@ -9,4 +9,8 @@
         <attr name="aa_bar_background" format="reference|color" />
         <attr name="aa_bar_title_text_color" format="reference|color" />
     </declare-styleable>
+    <declare-styleable name="aa_bottom_circle">
+        <attr name="aa_cut_width" format="dimension" />
+        <attr name="aa_bg_color" format="color" />
+    </declare-styleable>
 </resources>

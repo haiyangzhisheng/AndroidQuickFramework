@@ -57,7 +57,7 @@ public class T_Xutils_Activity extends BaseFragmentActivity {
         final String cardNo = "6228481369088809478";
         final String myaddr = "http://api.avatardata.cn/Bank/Query?key=828b337dbe434c53ba95850173ea5ec8&cardnum="
                 + cardNo;
-        Ahttp ahttp = new Ahttp(myActivity, myaddr, true);
+        final Ahttp ahttp = new Ahttp(myActivity, myaddr, true);
         ahttp.sendGet(new ArequestCallBack<String>(myActivity, ahttp) {
             @Override
             public void onSuccess(String responseInfo) {
@@ -66,7 +66,6 @@ public class T_Xutils_Activity extends BaseFragmentActivity {
                 toastShow(myData.result.bankname);
                 tv_bank.setText("银行卡信息：\n" + cardNo + "\n" + myData.result.bankname + "\n" + myData.result.cardtype);
             }
-
         });
 
     }

@@ -24,7 +24,6 @@ import com.aaagame.proframework.R;
 public class AALoadingDialog extends Dialog {
 
     private String initstr, strtitle;
-    private static AALoadingDialog lastDialgo;
 
     public AALoadingDialog(Activity activity) {
         super(activity);
@@ -74,14 +73,6 @@ public class AALoadingDialog extends Dialog {
                 }
             }
         });
-        try {
-            if (lastDialgo != null) {
-//                lastDialgo.dismiss();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        lastDialgo = this;
     }
 
     public void setMsg(final AsyncTask asyncTask, String initstr) {
@@ -101,13 +92,12 @@ public class AALoadingDialog extends Dialog {
                 }
             }
         });
-        lastDialgo = this;
     }
 
-    TextView tv_show, tv_title;
-    ImageView iv_loading;
-    Activity activity;
-    LinearLayout lin_title;
+    private TextView tv_show, tv_title;
+    private ImageView iv_loading;
+    private Activity activity;
+    private LinearLayout lin_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

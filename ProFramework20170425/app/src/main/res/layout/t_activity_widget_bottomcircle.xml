@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:aa_bar_title="界面" />
+        app:aa_bar_title="标题" />
 
-    <ListView
-        android:id="@+id/lv_list"
+    <com.aaagame.proframework.widget.Arc_Shape xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none" />
-
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        app:aa_bg_color="@color/orange500"
+        app:aa_cut_width="3dp" />
 </LinearLayout>

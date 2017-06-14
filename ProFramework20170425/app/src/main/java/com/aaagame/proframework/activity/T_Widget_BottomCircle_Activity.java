@@ -1,25 +1,19 @@
-package com.aaagame.proframework.fragment;
+package com.aaagame.proframework.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.aaagame.proframework.R;
 
+import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 
-public class T_TestFragment extends Fragment {
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.t_fragment_test, container, false);
-    }
+@ContentView(R.layout.t_activity_widget_bottomcircle)
+public class T_Widget_BottomCircle_Activity extends BaseFragmentActivity {
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         initView();
         initListener();
         initData();
@@ -51,6 +45,7 @@ public class T_TestFragment extends Fragment {
 
     //=============================网络请求数据
     private void reqData() {
+
     }
     //=============================其他操作
 }

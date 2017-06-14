@@ -216,6 +216,8 @@ public class Ahttp {
             }
         }
         params.setConnectTimeout(connTimeout);
+        //删除引用，防止内存泄露
+        myActivity = null;
         x.http().get(params, requestCallBack);
 
     }
