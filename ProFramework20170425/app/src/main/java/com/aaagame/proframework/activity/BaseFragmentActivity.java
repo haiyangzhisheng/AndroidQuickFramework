@@ -21,8 +21,12 @@ import com.aaagame.proframework.utils.AAViewCom;
 import com.aaagame.proframework.utils.AppManager;
 import com.aaagame.proframework.widget.AppTitleBar;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import org.xutils.x;
+
+import java.io.StringReader;
+import java.lang.reflect.Type;
 
 /**
  * 在此写用途
@@ -258,6 +262,46 @@ public class BaseFragmentActivity extends FragmentActivity implements View.OnCli
         for (int id : ids) {
             AAViewCom.getEt(myActivity, id).setEnabled(false);
         }
+    }
+
+    /**
+     * 返回格式化对象
+     *
+     * @param json
+     * @param classOfT
+     * @param <T>
+     * @return
+     */
+    public <T> T fromJson(String json, Class<T> classOfT) {
+        return getGson().fromJson(json, classOfT);
+    }
+
+    /**
+     * 返回格式化对象
+     *
+     * @param json
+     * @param typeOfT
+     * @param <T>
+     * @return
+     * @throws JsonSyntaxException
+     */
+    public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
+        if (json == null) {
+            return null;
+        }
+        StringReader reader = new StringReader(json);
+        T target = (T) getGson().fromJson(reader, typeOfT);
+        return target;
+    }
+
+    /**
+     * 转为Json字符串
+     *
+     * @param src
+     * @return
+     */
+    public String toJson(Object src) {
+        return getGson().toJson(src);
     }
 
 }
