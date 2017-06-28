@@ -1,4 +1,4 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.utils.AAComAdapter;
 import com.aaagame.proframework.utils.AAViewHolder;
 

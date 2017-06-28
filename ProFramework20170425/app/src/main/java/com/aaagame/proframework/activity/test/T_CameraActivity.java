@@ -1,4 +1,4 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.imagebrowser.Photo_Dialog_Fragment;
 import com.aaagame.proframework.utils.AAImageUtil;
 import com.aaagame.proframework.utils.AAMethod;

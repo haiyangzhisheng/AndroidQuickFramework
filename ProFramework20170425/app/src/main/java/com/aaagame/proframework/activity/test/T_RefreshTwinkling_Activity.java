@@ -1,9 +1,10 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.utils.AACom;
 import com.aaagame.proframework.utils.AAComAdapter;
 import com.aaagame.proframework.utils.AAViewHolder;
@@ -87,7 +88,7 @@ public class T_RefreshTwinkling_Activity extends BaseFragmentActivity {
             e.printStackTrace();
         }
 //        Ahttp ahttp = new Ahttp(myActivity, ConInterface.UserDesignerRecordList, jsonObject.toString(), SpUtils.getUserToken(myActivity));
-        Ahttp ahttp = new Ahttp(myActivity, ConInterface.Sample, jsonObject.toString(), "");
+        Ahttp ahttp = new Ahttp(myActivity, ConInterface.Sample, jsonObject.toString());
         ahttp.send(new ArequestCallBack<String>(myActivity, ahttp) {
             @Override
             public void onSuccess(String res) {

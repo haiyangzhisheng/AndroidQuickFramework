@@ -200,7 +200,7 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        final Ahttp ahttp = new Ahttp(getActivity(), ConInterface.Sample, ob.toString(), "");
+        final Ahttp ahttp = new Ahttp(getActivity(), ConInterface.Sample, ob.toString());
         ahttp.send(new ArequestCallBack<String>(getActivity(), ahttp) {
             @Override
             public void onSuccess(String responseInfo) {

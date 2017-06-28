@@ -1,10 +1,11 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.adapter.ViewPagerAdapter;
 import com.aaagame.proframework.fragment.T_TestFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;

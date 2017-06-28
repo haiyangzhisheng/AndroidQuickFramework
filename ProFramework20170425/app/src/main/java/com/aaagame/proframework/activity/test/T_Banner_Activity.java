@@ -1,9 +1,10 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.utils.AACom;
 import com.aaagame.proframework.utils.AAMethod;
 import com.aaagame.proframework.utils.BannerImageLoader;

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.test.T_CameraActivity;
 import com.aaagame.proframework.bean.VersionBean;
 import com.aaagame.proframework.dialog.AAMyAlertDialog;
 import com.aaagame.proframework.imagebrowser.Photo_Dialog_Fragment;

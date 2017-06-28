@@ -1,16 +1,19 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.aaagame.proframework.R;
-import com.aaagame.proframework.areachoice.Area_Choice;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
+import com.aaagame.proframework.dialog.PayDialog;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
 
-@ContentView(R.layout.t_activity_areachoice)
-public class T_AreaChoice_Activity extends BaseFragmentActivity {
+@ContentView(R.layout.t_activity_pay)
+public class T_Pay_Activity extends BaseFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,37 +24,40 @@ public class T_AreaChoice_Activity extends BaseFragmentActivity {
         reqData();
     }
 
-    Area_Choice area_Choice;
-
     //=============================初始化view
+    @ViewInject(R.id.btn_create_order)
+    Button btn_create_order;
+
     private void initView() {
 
     }
 
     //=============================初始化监听
     private void initListener() {
+
     }
 
-    @Event(value = {R.id.btn_show})
+    @Event(R.id.btn_create_order)
     private void setClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_show:
-                area_Choice.showPopupWindow_Bottom(R.layout.t_activity_areachoice).setOnClickListener(new View.OnClickListener() {
+            case R.id.btn_create_order:
+                PayDialog payDialog = new PayDialog();
+                payDialog.setData(Double.parseDouble("20"), "ordersn");
+                payDialog.show(myActivity.getFragmentManager(), "PayDialog");
+                payDialog.addMyDismiss(new PayDialog.OnMyDismiss() {
                     @Override
-                    public void onClick(View view) {
-                        area_Choice.mPopWindow.dismiss();
+                    public void toDismiss() {
+//                        AppManager.getInstance().killActivity("商品界面");
+                        animFinish();
                     }
                 });
-                break;
-            default:
                 break;
         }
     }
 
     //=============================初始化数据和变量
     private void initData() {
-        area_Choice = new Area_Choice(this);
-        area_Choice.initProvinceDatasOtherAsy();
+
     }
 
     //=============================网络请求数据

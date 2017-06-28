@@ -79,7 +79,7 @@ public class AppUpdateService extends Service {
             return;
         }
         System.out.println("礼包检测================");
-        Ahttp ahttp = new Ahttp("", "", "");
+        Ahttp ahttp = new Ahttp("", "");
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override
             public void onSuccess(String responseInfo) {

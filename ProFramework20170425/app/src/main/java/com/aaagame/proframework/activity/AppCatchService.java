@@ -53,9 +53,9 @@ public class AppCatchService extends Service {
         Ahttp ahttp = null;
         JSONObject ob = new JSONObject();
         if (SpUtils.getBool(this, ConInterface.Sample)) {
-            ahttp = new Ahttp(ConInterface.Sample, ob.toString(), "");
+            ahttp = new Ahttp(ConInterface.Sample, ob.toString());
         } else {
-            ahttp = new Ahttp(ConInterface.Sample, ob.toString(), "");
+            ahttp = new Ahttp(ConInterface.Sample, ob.toString());
         }
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override

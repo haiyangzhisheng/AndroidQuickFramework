@@ -1,4 +1,4 @@
-package com.aaagame.proframework.activity;
+package com.aaagame.proframework.activity.test;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.aaagame.proframework.R;
+import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.fragment.T_PaletteFragment;
 
 public class T_PaletteActivity extends BaseFragmentActivity {

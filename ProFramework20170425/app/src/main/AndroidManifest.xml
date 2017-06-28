@@ -22,7 +22,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.T_MainActivity">
+        <activity android:name=".activity.test.T_MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,36 +31,36 @@
         </activity>
         <!--工具类开始==============================================================================================================-->
         <!-- 下拉刷新上拉加载 -->
-        <activity android:name=".activity.T_RefreshTwinkling_Activity" />
+        <activity android:name=".activity.test.T_RefreshTwinkling_Activity" />
         <!-- 轮播图 -->
-        <activity android:name=".activity.T_Banner_Activity" />
+        <activity android:name=".activity.test.T_Banner_Activity" />
         <!-- 图片查看 -->
         <activity android:name=".imagebrowser.ImagePagerActivity" />
         <!-- 选项卡 -->
-        <activity android:name=".activity.T_SmartTabActivity" />
+        <activity android:name=".activity.test.T_SmartTabActivity" />
         <!-- 模板Activity -->
-        <activity android:name=".activity.T_Sample_Activity" />
+        <activity android:name=".activity.test.T_Sample_Activity" />
         <!-- 一般软件中帮助说明界面 -->
-        <activity android:name=".activity.T_HelpActivity" />
+        <activity android:name=".activity.test.T_HelpActivity" />
         <!-- 获取和设置主题颜色 -->
-        <activity android:name=".activity.T_PaletteActivity" />
+        <activity android:name=".activity.test.T_PaletteActivity" />
         <!-- xutils3用法 -->
-        <activity android:name=".activity.T_Xutils_Activity" />
+        <activity android:name=".activity.test.T_Xutils_Activity" />
         <!-- 应用后台下载服务 -->
         <service android:name=".activity.AppUpdateService" />
         <!-- 拍摄和选择照片 -->
-        <activity android:name=".activity.T_CameraActivity" />
+        <activity android:name=".activity.test.T_CameraActivity" />
         <!--列表为空时显示为空界面-->
-        <activity android:name=".activity.T_ListEmpty_Activity" />
+        <activity android:name=".activity.test.T_ListEmpty_Activity" />
         <!--软件Activity管理-->
-        <activity android:name=".activity.T_AppManager_Activity" />
+        <activity android:name=".activity.test.T_AppManager_Activity" />
         <!--地址选择器-->
-        <activity android:name=".activity.T_AreaChoice_Activity" />
+        <activity android:name=".activity.test.T_AreaChoice_Activity" />
         <!--绘制自定义视图之向下弧度的扇形-->
-        <activity android:name=".activity.T_Widget_BottomCircle_Activity" />
+        <activity android:name=".activity.test.T_Widget_BottomCircle_Activity" />
 
         <!--支付-->
-        <activity android:name=".activity.T_Pay_Activity" />
+        <activity android:name=".activity.test.T_Pay_Activity" />
         <!-- 微信支付 -->
         <activity
             android:name=".wxapi.WXPayEntryActivity"
