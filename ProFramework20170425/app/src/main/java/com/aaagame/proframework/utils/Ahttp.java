@@ -8,6 +8,8 @@ import com.aaagame.proframework.BaseApplication;
 import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.dialog.AALoadingDialog;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.common.util.MD5;
 import org.xutils.http.RequestParams;
@@ -23,21 +25,18 @@ public class Ahttp {
     public static final String Default_Param = "data";
     public static final String Default_Msg = "正在处理数据...";
     public static final String Default_Msg_Get = "正在获取数据...";
-    // public static final String Default_Version = "2.1";
-    public static final String Default_AddStr = "zyaf_core";
+    public static final String Default_AddStr = "aifeng_xgh_core";
     public static final String Default_Plat = "android";
-    //    public static final String MyBase_Addr = "/";
-//    public static final String Local_Addr = MyBase_Addr + "rest/";
-//    public static final String Using_Addr = Local_Addr;
     private RequestParams params;
     public AALoadingDialog loadingDialog;
     public Activity myActivity;
+    private String data = "";
 
-    private void initBase(Activity myActivity, String url, String data, String ck) {
-        params = new RequestParams(url);
-        params.addBodyParameter(Default_Param, data);
-        initComParams(data, ck);
+
+    private void initBase(Activity myActivity, String url, String data) {
+        this.data = data;
         this.myActivity = myActivity;
+        params = new RequestParams(url);
     }
 
     /**
@@ -47,28 +46,25 @@ public class Ahttp {
         params.setMultipart(true);
     }
 
-    public Ahttp(Activity myActivity, String url, Object o, String ck) {
-        initBase(myActivity, url, AACom.getGson().toJson(o), ck);
+    public Ahttp(Activity myActivity, String url, Object o) {
+        initBase(myActivity, url, AACom.getGson().toJson(o));
     }
 
-    public Ahttp(Activity myActivity, String url, String data, String ck) {
-        initBase(myActivity, url, data, ck);
-    }
-
-    public Ahttp(String url, String data, String ck) {
-        initBase(myActivity, url, data, ck);
+    public Ahttp(Activity myActivity, String url, String data) {
+        initBase(myActivity, url, data);
     }
 
     public Ahttp(String url, String data) {
-        initBase(null, url, data, "");
+        initBase(null, url, data);
     }
 
+
     public Ahttp(Activity myActivity, String url) {
-        initBase(myActivity, url, "", "");
+        initBase(myActivity, url, "");
     }
 
     public Ahttp(Activity myActivity, String url, boolean thirdReq) {
-        initBase(myActivity, url, "", "");
+        initBase(myActivity, url, "");
     }
 
     /**
@@ -76,7 +72,7 @@ public class Ahttp {
      *
      * @param data
      */
-    private void initComParams(String data, String tk) {
+    private void initComParams(String data) {
         String timestamp = String.valueOf(System.currentTimeMillis());
         params.addBodyParameter("plat", Default_Plat);
         params.addBodyParameter("timestamp", timestamp);
@@ -93,11 +89,39 @@ public class Ahttp {
         builder.append("data").append(data);
         builder.append(Default_AddStr);
         sign = MD5.md5(builder.toString());
+
+        String tk = null;
+        if (myActivity != null) {
+            tk = SpUtils.getUserToken(myActivity);
+        } else {
+            try {
+                tk = SpUtils.getUserToken(BaseApplication.getAppContext());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         if (!TextUtils.isEmpty(tk)) {
             params.addBodyParameter("tk", tk);
         }
         params.addBodyParameter("sign", sign);
         Log.d("param", "jsonString url = " + builder.toString() + "     tk= " + tk);
+    }
+
+    /**
+     * 请求的数据对象，当初始化当前类时data不为空时，data将被覆盖
+     */
+    private JSONObject jsonObject;
+
+    public Ahttp put(String key, Object value) {
+        if (jsonObject == null) {
+            jsonObject = new JSONObject();
+        }
+        try {
+            jsonObject.put(key, value);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return this;
     }
 
     public Ahttp addStrParams(String key, Object o) {
@@ -180,6 +204,17 @@ public class Ahttp {
                 e.printStackTrace();
             }
         }
+        try {//为params设置值,当jsonObject不为空时，将优先使用jsonObject
+            if (jsonObject != null) {
+                data = jsonObject.toString();
+            }
+            params.addBodyParameter(Default_Param, data);
+            initComParams(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(params.getUri() + "\n-----------------请求数据111：" + AACom.getGson().toJson(params.getQueryStringParams()));
+        System.out.println(params.getUri() + "\n-----------------请求数据：" + params.getStringParameter(Default_Param));
         params.setConnectTimeout(connTimeout);
         params.setReadTimeout(connTimeout);
         x.http().post(params, requestCallBack);
@@ -215,9 +250,16 @@ public class Ahttp {
                 e.printStackTrace();
             }
         }
+        try {//为params设置值,当jsonObject不为空时，将优先使用jsonObject
+            if (jsonObject != null) {
+                data = jsonObject.toString();
+            }
+            params.addBodyParameter(Default_Param, data);
+            initComParams(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         params.setConnectTimeout(connTimeout);
-        //删除引用，防止内存泄露
-        myActivity = null;
         x.http().get(params, requestCallBack);
 
     }

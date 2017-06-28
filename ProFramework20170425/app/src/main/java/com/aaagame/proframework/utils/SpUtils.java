@@ -105,13 +105,14 @@ public class SpUtils {
      *
      * @return
      */
-//    public static String getUserToken(Context myActivity) {
+    public static String getUserToken(Context myActivity) {
 //        UserBean userBean = null;
 //        if (!TextUtils.isEmpty(SpUtils.getStr(myActivity, Contants.USER_INFO))) {
 //            userBean = new UserBean();
 //            userBean = new Gson().fromJson(SpUtils.getStr(myActivity, Contants.USER_INFO), UserBean.class);
 //        }
 //        return userBean.getUserToken();
-//    }
+        return "";
+    }
 
 }

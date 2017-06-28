@@ -2,6 +2,7 @@ package com.aaagame.proframework;
 
 import android.app.Application;
 import android.app.Notification;
+import android.content.Context;
 
 import com.aaagame.proframework.utils.AAMethod;
 import com.squareup.leakcanary.LeakCanary;
@@ -18,6 +19,12 @@ import cn.jpush.android.api.JPushInterface;
 
 public class BaseApplication extends Application {
     public static String MyVersionName = "0";
+
+    private static Context appContext;
+
+    public static Context getAppContext() {
+        return appContext;
+    }
 
     @Override
     public void onCreate() {
