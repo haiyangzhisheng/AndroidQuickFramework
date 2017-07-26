@@ -40,7 +40,7 @@ AndroidQuickFramework是一个快速开发稳定安卓项目的基础项目架�
 19、激光推送初始化和收到结果处理方式
 
 20、其他小工具：Palette色彩风格设置、日期格式转换、价格格式化、地址选择、Toast封装、图片压缩、文件路径管理、支付宝微信银联支付、导航页处理、谷歌颜色库、各种动画处理
-![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/imgdes/1.jpg)
-![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/imgdes/2.jpg)
-![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/imgdes/3.jpg)
-![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/imgdes/4.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/1.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/2.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/3.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/4.jpg)
