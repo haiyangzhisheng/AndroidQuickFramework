@@ -1,11 +1,10 @@
-package com.aaagame.proframework.activity.test;
+package com.aaagame.proframework.activity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aaagame.proframework.R;
-import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.utils.AACom;
 import com.aaagame.proframework.utils.Ahttp;
 import com.aaagame.proframework.utils.ArequestCallBack;
@@ -60,10 +59,10 @@ public class T_Xutils_Activity extends BaseFragmentActivity {
                 + cardNo;
         final Ahttp ahttp = new Ahttp(myActivity, myaddr, true);
         ahttp.sendGet(new ArequestCallBack<String>(myActivity, ahttp) {
+
             @Override
-            public void onSuccess(String responseInfo) {
-                super.onSuccess(responseInfo);
-                MyData myData = getGson().fromJson(responseInfo, MyData.class);
+            public void onMySuccess(String res) {
+                MyData myData = getGson().fromJson(res, MyData.class);
                 toastShow(myData.result.bankname);
                 tv_bank.setText("银行卡信息：\n" + cardNo + "\n" + myData.result.bankname + "\n" + myData.result.cardtype);
             }

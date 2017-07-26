@@ -59,11 +59,7 @@ public class AppCatchService extends Service {
         }
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override
-            public void onSuccess(String responseInfo) {
-                super.onSuccess(responseInfo);
-                if (isError) {
-                    return;
-                }
+            public void onMySuccess(String responseInfo) {
                 SpUtils.setStr(AppCatchService.this, SpKey.initMainData, responseInfo);
                 SpUtils.setStr(AppCatchService.this, SpKey.initMainData_Time, System.currentTimeMillis() + "");
                 System.out.println("获取首页初始化数据=========================");

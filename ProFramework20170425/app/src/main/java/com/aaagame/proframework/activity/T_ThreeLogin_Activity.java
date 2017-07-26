@@ -1,4 +1,4 @@
-package com.aaagame.proframework.activity.test;
+package com.aaagame.proframework.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.aaagame.proframework.R;
-import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.utils.Ahttp;
 import com.aaagame.proframework.utils.ArequestCallBack;
 import com.umeng.socialize.UMAuthListener;
@@ -127,11 +126,7 @@ public class T_ThreeLogin_Activity extends BaseFragmentActivity {
         final Ahttp ahttp = new Ahttp(myActivity, "", ob.toString());
         ahttp.send(new ArequestCallBack<String>(myActivity, ahttp) {
             @Override
-            public void onSuccess(String responseInfo) {
-                super.onSuccess(responseInfo);
-                if (isError) {
-                    return;
-                }
+            public void onMySuccess(String responseInfo) {
                 animFinish();
             }
         });

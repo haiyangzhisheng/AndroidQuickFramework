@@ -203,11 +203,7 @@ public class PayDialog extends DialogFragment implements View.OnClickListener {
         final Ahttp ahttp = new Ahttp(getActivity(), ConInterface.Sample, ob.toString());
         ahttp.send(new ArequestCallBack<String>(getActivity(), ahttp) {
             @Override
-            public void onSuccess(String responseInfo) {
-                super.onSuccess(responseInfo);
-                if (isError) {
-                    return;
-                }
+            public void onMySuccess(String responseInfo) {
                 JSONObject obj = null;
                 try {
                     obj = new JSONObject(responseInfo);

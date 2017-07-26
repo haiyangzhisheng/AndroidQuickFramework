@@ -1,10 +1,9 @@
-package com.aaagame.proframework.activity.test;
+package com.aaagame.proframework.activity;
 
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.aaagame.proframework.R;
-import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.utils.AACom;
 import com.aaagame.proframework.utils.AAComAdapter;
 import com.aaagame.proframework.utils.AAViewHolder;
@@ -91,11 +90,7 @@ public class T_RefreshTwinkling_Activity extends BaseFragmentActivity {
         Ahttp ahttp = new Ahttp(myActivity, ConInterface.Sample, jsonObject.toString());
         ahttp.send(new ArequestCallBack<String>(myActivity, ahttp) {
             @Override
-            public void onSuccess(String res) {
-                super.onSuccess(res);
-                if (isError) {
-                    return;
-                }
+            public void onMySuccess(String res) {
                 //解析数据
                 ListBean record = AACom.getGson().fromJson(data, ListBean.class);
                 List<ListItem> list = record.results;

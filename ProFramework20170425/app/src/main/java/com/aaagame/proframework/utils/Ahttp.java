@@ -112,6 +112,12 @@ public class Ahttp {
      */
     private JSONObject jsonObject;
 
+    /**
+     * 添加请求键值对
+     * @param key
+     * @param value
+     * @return
+     */
     public Ahttp put(String key, Object value) {
         if (jsonObject == null) {
             jsonObject = new JSONObject();

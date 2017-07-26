@@ -82,11 +82,7 @@ public class AppUpdateService extends Service {
         Ahttp ahttp = new Ahttp("", "");
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override
-            public void onSuccess(String responseInfo) {
-                super.onSuccess(responseInfo);
-                if (aresult.ret.equals("0")) {
-                    return;
-                }
+            public void onMySuccess(String responseInfo) {
 //                final SL_Version version = AACom.getGson().fromJson(data, SL_Version.class);
 
                 try {
@@ -108,11 +104,7 @@ public class AppUpdateService extends Service {
         Ahttp ahttp = new Ahttp(ConInterface.Sample, "");
         ahttp.send(new ArequestCallBack<String>(ahttp) {
             @Override
-            public void onSuccess(String responseInfo) {
-                super.onSuccess(responseInfo);
-                if (aresult.ret.equals("0")) {
-                    return;
-                }
+            public void onMySuccess(String responseInfo) {
                 final VersionBean version = AACom.getGson().fromJson(data, VersionBean.class);
                 Intent broadcase = new Intent("CheckVersion");
                 broadcase.putExtra("versionBean", AACom.getGson().toJson(version));

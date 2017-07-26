@@ -1,17 +1,18 @@
-package com.aaagame.proframework.activity.test;
+package com.aaagame.proframework.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.aaagame.proframework.R;
-import com.aaagame.proframework.activity.BaseFragmentActivity;
-import com.aaagame.proframework.areachoice.Area_Choice;
+import com.aaagame.proframework.utils.AppManager;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
 
-@ContentView(R.layout.t_activity_areachoice)
-public class T_AreaChoice_Activity extends BaseFragmentActivity {
+@ContentView(R.layout.t_activity_appmanager)
+public class T_AppManager_Activity extends BaseFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,27 +23,29 @@ public class T_AreaChoice_Activity extends BaseFragmentActivity {
         reqData();
     }
 
-    Area_Choice area_Choice;
-
     //=============================初始化view
+    @ViewInject(R.id.btn_close_activity)
+    Button btn_close_activity;
+    @ViewInject(R.id.btn_exit_app)
+    Button btn_exit_app;
+
     private void initView() {
 
     }
 
-    //=============================初始化监听
+    //============================初始化监听
     private void initListener() {
+
     }
 
-    @Event(value = {R.id.btn_show})
+    @Event(value = {R.id.btn_exit_app, R.id.btn_close_activity})
     private void setClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_show:
-                area_Choice.showPopupWindow_Bottom(R.layout.t_activity_areachoice).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        area_Choice.mPopWindow.dismiss();
-                    }
-                });
+            case R.id.btn_close_activity:
+                AppManager.getInstance().killActivity(T_MainActivity.class);
+                break;
+            case R.id.btn_exit_app:
+                AppManager.getInstance().AppExit(myActivity);
                 break;
             default:
                 break;
@@ -51,8 +54,7 @@ public class T_AreaChoice_Activity extends BaseFragmentActivity {
 
     //=============================初始化数据和变量
     private void initData() {
-        area_Choice = new Area_Choice(this);
-        area_Choice.initProvinceDatasOtherAsy();
+
     }
 
     //=============================网络请求数据

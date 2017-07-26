@@ -1,11 +1,10 @@
-package com.aaagame.proframework.activity.test;
+package com.aaagame.proframework.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.aaagame.proframework.R;
-import com.aaagame.proframework.activity.BaseFragmentActivity;
 import com.aaagame.proframework.dialog.PayDialog;
 
 import org.xutils.view.annotation.ContentView;

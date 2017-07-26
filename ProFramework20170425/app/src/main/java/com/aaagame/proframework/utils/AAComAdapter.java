@@ -49,9 +49,9 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
     /**
      * 设置没有数据显示时，显示的界面
      *
-     * @param noDataLayoutId
+     * @param emptyLayoutId
      */
-    public void setNotShowLayoutId(int noDataLayoutId) {
+    public void setEmptyLayout(int emptyLayoutId) {
         this.noDataLayoutId = noDataLayoutId;
     }
 
@@ -96,13 +96,6 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
     }
 
     /**
-     * 设置显示购物车背景
-     */
-    public void setShowShoppingCartEmpty() {
-        AAViewCom.getIv(emptyView, R.id.iv_shopping_cart).setVisibility(View.VISIBLE);
-    }
-
-    /**
      * 设置空界面提示
      *
      * @param alert
@@ -124,12 +117,12 @@ public abstract class AAComAdapter<T> extends BaseAdapter {
     }
 
     /**
-     * 设置空界面在Tab下时，调整顶部高度
+     * 调整空界面顶部高度
      */
-    public void setEmptyTab() {
+    public void setEmptyTopMargin(int dptop) {
         View view_top = AAViewCom.getView(emptyView, R.id.view_top);
         ViewGroup.LayoutParams layoutParams = view_top.getLayoutParams();
-        layoutParams.height = DensityUtil.dip2px(50);
+        layoutParams.height = DensityUtil.dip2px(dptop);
         layoutParams.width = 10;
         view_top.setLayoutParams(layoutParams);
     }
