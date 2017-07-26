@@ -44,3 +44,7 @@ AndroidQuickFramework是一个快速开发稳定安卓项目的基础项目架�
 ![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/2.jpg)
 ![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/3.jpg)
 ![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/4.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/5.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/6.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/7.jpg)
+![image](https://github.com/haiyangzhisheng/AndroidQuickFramework/blob/master/imgdes/8.jpg)
