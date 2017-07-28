@@ -15,21 +15,19 @@ public class T_AreaChoice_Activity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
-        initListener();
-        initData();
         reqData();
     }
 
     Area_Choice area_Choice;
 
     //=============================初始化view
-    private void initView() {
+        @Override
+        public void initView() {
 
     }
 
     //=============================初始化监听
-    private void initListener() {
+        @Override  public void initListener() {
     }
 
     @Event(value = {R.id.btn_show})
@@ -49,13 +47,13 @@ public class T_AreaChoice_Activity extends BaseFragmentActivity {
     }
 
     //=============================初始化数据和变量
-    private void initData() {
+        @Override  public void initData() {
         area_Choice = new Area_Choice(this);
         area_Choice.initProvinceDatasOtherAsy();
     }
 
     //=============================网络请求数据
-    private void reqData() {
+        @Override  public void reqData() {
 
     }
     //=============================其他操作

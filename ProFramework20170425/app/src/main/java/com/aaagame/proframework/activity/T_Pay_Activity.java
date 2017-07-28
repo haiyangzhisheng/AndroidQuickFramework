@@ -17,9 +17,6 @@ public class T_Pay_Activity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
-        initListener();
-        initData();
         reqData();
     }
 
@@ -27,12 +24,12 @@ public class T_Pay_Activity extends BaseFragmentActivity {
     @ViewInject(R.id.btn_create_order)
     Button btn_create_order;
 
-    private void initView() {
+        @Override  public void initView() {
 
     }
 
     //=============================初始化监听
-    private void initListener() {
+        @Override  public void initListener() {
 
     }
 
@@ -55,12 +52,12 @@ public class T_Pay_Activity extends BaseFragmentActivity {
     }
 
     //=============================初始化数据和变量
-    private void initData() {
+        @Override  public void initData() {
 
     }
 
     //=============================网络请求数据
-    private void reqData() {
+        @Override  public void reqData() {
 
     }
     //=============================其他操作

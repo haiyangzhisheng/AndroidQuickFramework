@@ -1,7 +1,6 @@
 package com.aaagame.proframework.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import com.aaagame.proframework.R;
 
 import org.xutils.view.annotation.Event;
 
-public class T_TestFragment extends Fragment {
+public class T_TestFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,12 +26,14 @@ public class T_TestFragment extends Fragment {
     }
 
     //=============================初始化view
-    private void initView() {
+    @Override
+    public void initView() {
 
     }
 
     //=============================初始化监听
-    private void initListener() {
+    @Override
+    public void initListener() {
 
     }
 
@@ -45,12 +46,14 @@ public class T_TestFragment extends Fragment {
     }
 
     //=============================初始化数据和变量
-    private void initData() {
+    @Override
+    public void initData() {
 
     }
 
     //=============================网络请求数据
-    private void reqData() {
+    @Override
+    public void reqData() {
     }
     //=============================其他操作
 }

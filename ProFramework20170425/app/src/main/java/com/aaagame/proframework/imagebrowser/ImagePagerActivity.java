@@ -98,6 +98,26 @@ public class ImagePagerActivity extends BaseFragmentActivity {
     }
 
     @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(STATE_POSITION, mPager.getCurrentItem());
     }

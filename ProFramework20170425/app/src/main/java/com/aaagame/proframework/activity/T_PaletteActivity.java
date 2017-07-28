@@ -61,6 +61,26 @@ public class T_PaletteActivity extends BaseFragmentActivity {
         });
     }
 
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
     /**
      * 根据Palette提取的颜色，修改tab和toolbar以及状态栏的颜色
      */

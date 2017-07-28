@@ -32,7 +32,23 @@ public class T_HelpActivity extends BaseFragmentActivity {
         initData();
     }
 
-    private void initData() {
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
+    @Override
+    public void initData() {
         switch (mytitle) {
             case Demand_Xy_Help:
                 tv_content.setText(Demand_Xy_Content);

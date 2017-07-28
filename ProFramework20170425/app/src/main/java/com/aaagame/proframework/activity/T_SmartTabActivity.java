@@ -24,6 +24,26 @@ public class T_SmartTabActivity extends BaseFragmentActivity {
         initTab();
     }
 
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
     //选项卡=============================
     @ViewInject(R.id.tab_head)
     public SmartTabLayout tab_head;

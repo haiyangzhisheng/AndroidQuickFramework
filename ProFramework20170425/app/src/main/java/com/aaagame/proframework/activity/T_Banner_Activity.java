@@ -24,6 +24,26 @@ public class T_Banner_Activity extends BaseFragmentActivity {
         initBanner();
     }
 
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
     @ViewInject(R.id.banner)
     Banner banner;
     String[] urls = {"http://ww4.sinaimg.cn/large/006uZZy8jw1faic1xjab4j30ci08cjrv.jpg",

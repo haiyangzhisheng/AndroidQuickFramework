@@ -83,10 +83,10 @@ public class Photo_Take_Util {
 
     }
 
-    private void initListener() {
+    public void initListener() {
     }
 
-    private void initData() {
+    public void initData() {
 
     }
 

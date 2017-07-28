@@ -23,7 +23,15 @@ import org.xutils.x;
  * @author: ds
  * @date: 2016-12-30 15:00
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
+    public abstract void initView();
+
+    public abstract void initListener();
+
+    public abstract void initData();
+
+    public abstract void reqData();
+
     public BaseFragmentActivity myActivity;
     private boolean injected = false;
 

@@ -20,9 +20,6 @@ public class T_ListEmpty_Activity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
-        initListener();
-        initData();
         reqData();
     }
 
@@ -32,7 +29,7 @@ public class T_ListEmpty_Activity extends BaseFragmentActivity {
     @ViewInject(R.id.gv_list)
     GridView gv_list;
 
-    private void initView() {
+        @Override  public void initView() {
         AAComAdapter<String> adapter = new AAComAdapter<String>(myActivity, R.layout.t_activity_main_item) {
             @Override
             public void convert(AAViewHolder holder, String mt) {
@@ -55,17 +52,17 @@ public class T_ListEmpty_Activity extends BaseFragmentActivity {
     }
 
     //=============================初始化监听
-    private void initListener() {
+        @Override  public void initListener() {
 
     }
 
     //=============================初始化数据和变量
-    private void initData() {
+        @Override  public void initData() {
 
     }
 
     //=============================网络请求数据
-    private void reqData() {
+        @Override  public void reqData() {
 
     }
     //=============================其他操作

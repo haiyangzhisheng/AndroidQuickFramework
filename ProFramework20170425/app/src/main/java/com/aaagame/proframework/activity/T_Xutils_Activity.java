@@ -18,9 +18,6 @@ public class T_Xutils_Activity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
-        initListener();
-        initData();
         reqData();
     }
 
@@ -34,16 +31,16 @@ public class T_Xutils_Activity extends BaseFragmentActivity {
     @ViewInject(R.id.iv_gif)
     ImageView iv_gif;
 
-    private void initView() {
+        @Override  public void initView() {
     }
 
     //=============================初始化监听
-    private void initListener() {
+        @Override  public void initListener() {
 
     }
 
     //=============================初始化数据和变量
-    private void initData() {
+        @Override  public void initData() {
         AACom.displayCircleImage(iv_circle_header, "http://image.baidu.com/search/down?tn=download&word=download&ie=utf8&fr=detail&url=http%3A%2F%2Fimg3.fengniao.com%2Fforum%2Fattachpics%2F214%2F158%2F8551415.jpg&thumburl=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D2299116731%2C22865354%26fm%3D23%26gp%3D0.jpg");
         AACom.displayFitImage(iv_show, "http://image.baidu.com/search/down?tn=download&word=download&ie=utf8&fr=detail&url=http%3A%2F%2Fimg3.fengniao.com%2Fforum%2Fattachpics%2F214%2F158%2F8551415.jpg&thumburl=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D2299116731%2C22865354%26fm%3D23%26gp%3D0.jpg");
         AACom.displayGifFitImage(iv_gif, "https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fupload.chinapet.com%2Fforum%2F201312%2F18%2F105107ujcucbls9x1uzbjb.gif&thumburl=https%3A%2F%2Fss0.bdstatic.com%2F70cFvHSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D576892000%2C1749133700%26fm%3D23%26gp%3D0.jpg");
@@ -52,7 +49,7 @@ public class T_Xutils_Activity extends BaseFragmentActivity {
     }
 
     //=============================网络请求数据
-    private void reqData() {
+        @Override  public void reqData() {
 //银行卡信息查询
         final String cardNo = "6228481369088809478";
         final String myaddr = "http://api.avatardata.cn/Bank/Query?key=828b337dbe434c53ba95850173ea5ec8&cardnum="

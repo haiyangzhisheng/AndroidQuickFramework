@@ -59,7 +59,8 @@ public class T_Bluetooth_Dialog extends Dialog {
         line_ypd = (LinearLayout) findViewById(R.id.line_ypd);
     }
 
-    private void initListener() {
+
+    public void initListener() {
         btn_cpxz_cancle
                 .setOnClickListener(new View.OnClickListener() {
 
@@ -77,7 +78,7 @@ public class T_Bluetooth_Dialog extends Dialog {
     private List<DeviceItem> edlist = new ArrayList<DeviceItem>();
     private T_BluetoothService bluetoothService;
 
-    private void initData() {
+    public void initData() {
         edlist.clear();
         bluetoothService = T_BluetoothService.getBluetoothService(context);
         for (BluetoothDevice bluetoothDevice : bluetoothService.unbondDevices) {

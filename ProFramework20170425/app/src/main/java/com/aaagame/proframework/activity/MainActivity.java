@@ -20,6 +20,26 @@ import org.xutils.view.annotation.ContentView;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseFragmentActivity {
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
     Photo_Dialog_Fragment photo_dialog_fragment;
 
     @Override

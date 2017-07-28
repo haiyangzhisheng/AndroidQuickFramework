@@ -25,9 +25,6 @@ public class T_MainActivity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
-        initListener();
-        initData();
         reqData();
         System.out.println("根路径：：：：" + AAPath.getRootPath());
     }
@@ -36,12 +33,12 @@ public class T_MainActivity extends BaseFragmentActivity {
     @ViewInject(R.id.lv_list)
     ListView lv_list;
 
-    private void initView() {
+        @Override  public void initView() {
 
     }
 
     //=============================初始化监听
-    private void initListener() {
+        @Override  public void initListener() {
         lv_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -57,7 +54,8 @@ public class T_MainActivity extends BaseFragmentActivity {
     //=============================初始化数据和变量
     private LinkedHashMap<String, String> map;
 
-    private void initData() {
+    @Override
+    public void initData() {
         map = new LinkedHashMap<String, String>();
         map.put("T_Banner_Activity", "轮播图");
         map.put("T_RefreshTwinkling_Activity", "下拉刷新上拉加载");
@@ -81,7 +79,7 @@ public class T_MainActivity extends BaseFragmentActivity {
     }
 
     //=============================网络请求数据
-    private void reqData() {
+        @Override  public void reqData() {
 
     }
     //=============================其他操作

@@ -43,6 +43,26 @@ public class T_CameraActivity extends BaseFragmentActivity {
 
     }
 
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void reqData() {
+
+    }
+
     //是否点击Photo_Take_Util请求多张图片
     boolean reqPhotos = true;
 

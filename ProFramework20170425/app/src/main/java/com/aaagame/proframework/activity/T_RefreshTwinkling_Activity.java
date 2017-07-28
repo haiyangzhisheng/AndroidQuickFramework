@@ -31,6 +31,21 @@ public class T_RefreshTwinkling_Activity extends BaseFragmentActivity {
 //        reqData();
     }
 
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
     @ViewInject(R.id.refresh)
     TwinklingRefreshLayout refresh;
     @ViewInject(R.id.lv_list)

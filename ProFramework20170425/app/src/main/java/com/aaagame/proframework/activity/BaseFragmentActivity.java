@@ -35,8 +35,15 @@ import java.lang.reflect.Type;
  * @author: myName
  * @date: 2016-12-30 14:50
  */
-public class BaseFragmentActivity extends FragmentActivity implements View.OnClickListener {
+public abstract class BaseFragmentActivity extends FragmentActivity implements View.OnClickListener {
 
+    public abstract void initView();
+
+    public abstract void initListener();
+
+    public abstract void initData();
+
+    public abstract void reqData();
     /**
      * Activity之间传递参数标识
      */
@@ -62,6 +69,9 @@ public class BaseFragmentActivity extends FragmentActivity implements View.OnCli
         this.myActivity = this;
         mTitleBar = (AppTitleBar) findViewById(R.id.app_title_bar);
         setListener();
+        initView();
+        initListener();
+        initData();
     }
 
     DialogInterface.OnKeyListener keylistener = new DialogInterface.OnKeyListener() {
