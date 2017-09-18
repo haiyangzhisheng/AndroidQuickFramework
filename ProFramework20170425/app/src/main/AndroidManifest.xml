@@ -58,6 +58,15 @@
         <activity android:name=".activity.T_AreaChoice_Activity" />
         <!--绘制自定义视图之向下弧度的扇形-->
         <activity android:name=".activity.T_Widget_BottomCircle_Activity" />
+        <!--ListView的升级版RecyclerView-->
+        <activity android:name=".activity.T_RecyclerView_Activity" />
+        <!--RecyclerView和DiffUtil-->
+        <activity android:name=".activity.T_RecyclerView_DiffUtil_Activity" />
+        <!--RecyclerView自定义adapter单个布局和DiffUtil-->
+        <activity android:name=".activity.T_RecyclerView_Adapter_Activity" />
+        <!--RecyclerView自定义adapter多个个布局和DiffUtil-->
+        <activity android:name=".activity.T_RecyclerView_Adapter_MultiItemType_Activity" />
+
 
         <!--支付-->
         <activity android:name=".activity.T_Pay_Activity" />

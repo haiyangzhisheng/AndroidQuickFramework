@@ -33,12 +33,14 @@ public class T_MainActivity extends BaseFragmentActivity {
     @ViewInject(R.id.lv_list)
     ListView lv_list;
 
-        @Override  public void initView() {
+    @Override
+    public void initView() {
 
     }
 
     //=============================初始化监听
-        @Override  public void initListener() {
+    @Override
+    public void initListener() {
         lv_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -68,6 +70,11 @@ public class T_MainActivity extends BaseFragmentActivity {
         map.put("T_AppManager_Activity", "Activity管理");
         map.put("T_AreaChoice_Activity", "地址选择器");
         map.put("T_Widget_BottomCircle_Activity", "自定义绘制控件--向下弧度的扇形");
+        map.put("T_RecyclerView_Activity", "ListView的升级版RecyclerView");
+        map.put("T_RecyclerView_DiffUtil_Activity", "ListView的升级版RecyclerView和DiffUtil");
+        map.put("T_RecyclerView_Adapter_Activity", "ListView的升级版RecyclerView自定义adapter单个布局和DiffUtil");
+        map.put("T_RecyclerView_Adapter_MultiItemType_Activity", "ListView的升级版RecyclerView自定义adapter多个布局和DiffUtil");
+
 
         AAComAdapter<String> adapter = new AAComAdapter<String>(myActivity, R.layout.t_activity_main_item, new ArrayList<>(map.values())) {
             @Override
@@ -79,7 +86,8 @@ public class T_MainActivity extends BaseFragmentActivity {
     }
 
     //=============================网络请求数据
-        @Override  public void reqData() {
+    @Override
+    public void reqData() {
 
     }
     //=============================其他操作
